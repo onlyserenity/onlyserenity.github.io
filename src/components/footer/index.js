@@ -30,7 +30,7 @@ export default class Footer extends Component {
             <Container>
                 <List horizontal>
                     <List.Item>
-                        <Icon name="github" />
+                        <a href='https://github.com/onlyserenity'><Icon name="github" /></a>
                     </List.Item>
                     <List.Item>
                         <Icon name="linkedin" />

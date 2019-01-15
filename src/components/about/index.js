@@ -60,6 +60,7 @@ const Main = styled.div`
         }
 
         ${media.phone`width: 320px;`}
+        ${media.phablet`width: 320px;`}
     }
     & .buttons {
         display: grid;

@@ -111,10 +111,12 @@ const HamburgerContainer = styled.div`
         border-radius: 9px;
         transform: rotate(0deg);
         transition: 0.25s ease-in-out;
+
     }
 
     & span:nth-child(1) {
         top: 0;
+
     }
 
     & span:nth-child(2) {
@@ -124,9 +126,28 @@ const HamburgerContainer = styled.div`
     & span:nth-child(3) {
         top: 28px;
     }
+    span:nth-child(4) {
+
+    }
 `
 
-const MobileDropMenu = styled.div``
+const MobileDropMenu = styled.div`
+    background: rgba(62, 49, 68, 0.8);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    & div {
+        & a {
+            font-size: 24px;
+            padding: 0 140px;
+            color: white;
+        }
+    }
+
+`
 class Menu extends React.Component {
     constructor(props) {
         super(props)
@@ -137,7 +158,9 @@ class Menu extends React.Component {
     }
 
     toggleNav = () => {
-        console.log('click')
+        this.setState({
+            mobile: !this.state.mobile,
+        })
     }
     handleItemClick = e => {
         if (e.target.id !== this.state.activeItem) {
@@ -185,14 +208,6 @@ class Menu extends React.Component {
                                 Contact
                             </div>
                         </Link>
-                        <Link to="/blog">
-                            <div
-                                className={activeItem === 'blog' ? 'active item' : 'item'}
-                                id="blog"
-                                onClick={this.handleItemClick}>
-                                Blog
-                            </div>
-                        </Link>
                         <Link to="/login">
                             <div
                                 className={activeItem === 'login' ? 'active item' : 'item'}
@@ -207,13 +222,56 @@ class Menu extends React.Component {
                 </Box>
                 <Box className={mobileNav}>
                     <HamburgerContainer onClick={this.toggleNav}>
-                        <span />
-                        <span />
-                        <span />
-                        <span />
+                        <span mobile={this.state.mobile} />
+                        <span mobile={this.state.mobile}/>
+                        <span mobile={this.state.mobile}/>
+                        <span mobile={this.state.mobile}/>
                     </HamburgerContainer>
 
-                    {mobile && <MobileDropMenu />}
+                    {mobile && <MobileDropMenu> 
+                        <div>
+                        <Link to="/">
+                            <div
+                                className={activeItem === 'about' ? 'active item' : 'item'}
+                                id="about"
+                                onClick={this.handleItemClick}>
+                                About
+                            </div>
+                        </Link>
+                        <Link to="/experience">
+                            <div
+                                className={activeItem === 'experience' ? 'active item' : 'item'}
+                                id="experience"
+                                onClick={this.handleItemClick}>
+                                Experience
+                            </div>
+                        </Link>
+                        <Link to="/work">
+                            <div
+                                className={activeItem === 'work' ? 'active item' : 'item'}
+                                id="work"
+                                onClick={this.handleItemClick}>
+                                Work
+                            </div>
+                        </Link>
+                        <Link to="/contact">
+                            <div
+                                className={activeItem === 'contact' ? 'active item' : 'item'}
+                                id="contact"
+                                onClick={this.handleItemClick}>
+                                Contact
+                            </div>
+                        </Link>
+                        <Link to="/login">
+                            <div
+                                className={activeItem === 'login' ? 'active item' : 'item'}
+                                id="login"
+                                onClick={this.handleItemClick}>
+                                Login
+                            </div>
+                        </Link>
+                        </div>
+                    </MobileDropMenu>}
                 </Box>
             </Main>
         )
