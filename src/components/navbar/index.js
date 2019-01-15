@@ -84,6 +84,7 @@ const mobileNav = css`
 `
 
 const HamburgerContainer = styled.div`
+    display: ${props => props.mobile ? "none" : "block"};
     width: 50px;
     height: 36px;
     position: absolute;
@@ -116,7 +117,7 @@ const HamburgerContainer = styled.div`
 
     & span:nth-child(1) {
         top: 0;
-
+        
     }
 
     & span:nth-child(2) {
@@ -129,6 +130,51 @@ const HamburgerContainer = styled.div`
     span:nth-child(4) {
 
     }
+`
+
+const HamburgerCloseContainer = styled.div`
+    display: ${props => props.mobile ? "block" : "none"};
+    width: 50px;
+    height: 36px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+
+    &:hover {
+        cursor: pointer;
+
+        & span {
+            background: pink;
+        }
+    }
+
+    & span {
+        display: block;
+        position: absolute;
+        left: 4px;
+        width: 100%;
+        height: 4px;
+        background: #ddd;
+        border-radius: 9px;
+        transform: rotate(0deg);
+        animation: fadein 2s;
+
+    }
+
+    & span:nth-child(1) {
+        top: 18px;
+        transform: rotate(45deg);
+    }
+
+    & span:nth-child(2) {
+        top: 16px;
+        transform: rotate(-45deg);
+    }
+
+
 `
 
 const MobileDropMenu = styled.div`
@@ -145,6 +191,12 @@ const MobileDropMenu = styled.div`
             padding: 0 140px;
             color: white;
         }
+    }
+
+    & .active {
+        border-bottom: 3px solid #ff5dad;
+
+        color: #ff5dad;
     }
 
 `
@@ -222,14 +274,19 @@ class Menu extends React.Component {
                     <Footer />
                 </Box>
                 <Box className={mobileNav}>
-                    <HamburgerContainer onClick={this.toggleNav}>
-                        <span mobile={this.state.mobile} />
-                        <span mobile={this.state.mobile}/>
-                        <span mobile={this.state.mobile}/>
-                        <span mobile={this.state.mobile}/>
+                    <HamburgerContainer onClick={this.toggleNav} mobile={this.state.mobile}>
+                        <span  />
+                        <span />
+                        <span />
+                        <span />
                     </HamburgerContainer>
 
                     {mobile && <MobileDropMenu> 
+                        <HamburgerCloseContainer onClick={this.toggleNav} mobile={this.state.mobile}>
+                            <span  />
+                            <span />
+
+                        </HamburgerCloseContainer>
                         <div>
                         <Link to="/">
                             <div
