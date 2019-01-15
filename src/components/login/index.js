@@ -8,8 +8,8 @@ const Main = styled.div`
   padding: 100px 40px;
   height: 100%;
   & .header {
-    width: 8%;
     & h1 {
+      width: 80px;
       border-bottom: 2px solid #ff5dad;
       margin-top: 20px;
       color: #a094a8;

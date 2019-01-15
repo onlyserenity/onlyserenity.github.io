@@ -9,7 +9,7 @@ const Main = styled.div`
 
   & .header {
     & h1 {
-      width: 9%;
+      width: 82px;
       justify-content: flex-start;
       border-bottom: 2px solid #ff5dad;
       margin-top: 20px;
