@@ -166,6 +166,7 @@ class Menu extends React.Component {
         if (e.target.id !== this.state.activeItem) {
             this.setState({
                 activeItem: e.target.id,
+                mobile: false
             })
         }
     }
