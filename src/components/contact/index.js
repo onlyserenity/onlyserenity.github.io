@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Input, Button, Icon, Modal } from "semantic-ui-react";
-import ReactQuill from "react-quill"; // ES6
+import { Input, Button, Icon, Modal, Form, TextArea } from "semantic-ui-react";
 
 import media from "../Media";
 import Mars from "../../assets/mars.png";
@@ -38,21 +37,8 @@ const Main = styled.div`
     align-items: flex-start;
     padding: 40px;
     ${media.phone`width: 60%; padding: 40px;`}
-
+    ${media.phablet`width: 60%; padding: 40px;`}
     flex-direction: column;
-
-    & .quill {
-      position: relative;
-      margin-top: 32px;
-      background-color: white;
-      & .ql-editor {
-        height: 100px;
-
-        &::before {
-          color: pink;
-        }
-      }
-    }
 
     & button {
       margin-top: 10px;
@@ -62,11 +48,27 @@ const Main = styled.div`
     ${media.phone`padding-top: 20px;`}
   }
 
-  & img {
-    border-radius: calc(256px - 120px);
-    width: 40%;
+  & .image-container {
+    ${media.phone`width: 60%; `}
+    ${media.phablet`width: 60%;`}
     margin: auto;
-    &:hover {
+    padding: auto;
+
+    & img {
+      border-radius: calc(256px - 120px);
+      width: 200px;
+
+      &:hover {
+      }
+      ${media.phone`width: 100px;`}
+      ${media.phablet`width: 100px;`}
+    }
+  }
+  & .text-area {
+    padding: 10px 0;
+
+    & .text-area-input {
+      width: 200px;
     }
   }
 `;
@@ -126,19 +128,25 @@ export default class Contact extends Component {
               <Icon name="user" color="pink" />
               <input />
             </Input>
-            <ReactQuill
-              theme="snow"
-              value={this.state.text}
-              onChange={this.onChange}
-              placeholder="Enter message here"
-            />
+            <Form className="text-area">
+              <TextArea
+                name="text"
+                value={this.state.text}
+                onChange={this.onChange}
+                className="text-area-input"
+                autoHeight
+                placeholder="Enter message here..."
+              />
+            </Form>
 
             <Button color="black" onClick={this.onSubmit}>
               Submit
             </Button>
           </div>
 
-          <img src={Mars} alt="mars" />
+          <div className="image-container">
+            <img src={Mars} alt="mars" />
+          </div>
         </div>
         <Modal size="mini" open={this.state.open} onClose={this.close}>
           <Modal.Header>Error</Modal.Header>

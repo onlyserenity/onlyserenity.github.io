@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { List, Icon, Card, Image, Radio } from "semantic-ui-react";
+import { List, Icon, Card, Image } from "semantic-ui-react";
 
 import { Projects } from "../../config/work";
 
