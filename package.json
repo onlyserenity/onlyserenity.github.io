@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "emotion": "^10.0.6",
+        "netlify-cli": "^2.6.1",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-particles-js": "^2.4.2",
