@@ -6,7 +6,7 @@ const schools = [
     major: "Computer Science",
     started: 2017,
     to: "2020",
-    desc: "BA in Computer Science",
+    desc: ["Concentration in Software Engineering", "3.6 GPA"],
     img: SNHU
   }
 ];

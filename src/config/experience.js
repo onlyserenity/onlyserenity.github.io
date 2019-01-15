@@ -7,7 +7,13 @@ const jobs = [
     title: "Software Engineering Intern",
     from: "May, 2018",
     to: "July, 2018",
-    desc: "Android .....",
+    desc: [
+      "Front and back ends projects",
+      "GitHub",
+      "Android",
+      "Java",
+      "Code Reviews"
+    ],
     img: OLE
   },
   {
@@ -15,7 +21,14 @@ const jobs = [
     title: "Software Engineering Intern",
     from: "Nov, 2018",
     to: "Current",
-    desc: "C# .....",
+    desc: [
+      "Front and back ends projects",
+      "Microsoft SQL 2017",
+      "API implementation",
+      "Micrsoft DevOps",
+      "C#",
+      "ASP.NET MVC"
+    ],
     img: Aclara
   }
 ];

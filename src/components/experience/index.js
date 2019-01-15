@@ -100,7 +100,13 @@ export default class Experience extends Component {
                           <em>{item.to}</em>
                         </Card.Meta>
                         <Card.Description>
-                          <em>{item.desc}</em>
+                          <ul>
+                            <em>
+                              {item.desc.map((descItem, key) => (
+                                <li>{descItem}</li>
+                              ))}
+                            </em>
+                          </ul>
                         </Card.Description>
                       </Card.Content>
                     </Card>
@@ -129,7 +135,13 @@ export default class Experience extends Component {
                           From <em>{item.from}</em> to <em>{item.to}</em>
                         </Card.Meta>
                         <Card.Description>
-                          <em>{item.desc}</em>
+                          <ul>
+                            <em>
+                              {item.desc.map((descItem, key) => (
+                                <li>{descItem}</li>
+                              ))}
+                            </em>
+                          </ul>
                         </Card.Description>
                       </Card.Content>
                     </Card>
