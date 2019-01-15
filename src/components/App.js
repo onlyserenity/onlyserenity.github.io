@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
-import {createGlobalStyle} from 'styled-components'
-import {BrowserRouter as Router} from 'react-router-dom'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import { createGlobalStyle } from "styled-components";
+import { BrowserRouter as Router } from "react-router-dom";
+import styled from "styled-components";
 
-import Layout from './Layout'
-import Background from '../assets/01.jpg'
+import Layout from "./Layout";
+import Background from "../assets/01.jpg";
 
 const GlobalStyle = createGlobalStyle`
  html {
@@ -38,19 +38,19 @@ const GlobalStyle = createGlobalStyle`
     grid-template-columns: 100%;
   }
  
-`
-const Main = styled.div``
+`;
+const Main = styled.div``;
 class App extends Component {
-    render() {
-        return (
-            <Router>
-                <Main>
-                    <GlobalStyle />
-                    <Layout />
-                </Main>
-            </Router>
-        )
-    }
+  render() {
+    return (
+      <Router>
+        <Main>
+          <GlobalStyle />
+          <Layout />
+        </Main>
+      </Router>
+    );
+  }
 }
 
-export default App
+export default App;

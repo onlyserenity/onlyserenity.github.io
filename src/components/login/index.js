@@ -1,125 +1,131 @@
-import React, {Component} from 'react'
-import {Icon, Input, Button} from 'semantic-ui-react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import { Icon, Input, Button } from "semantic-ui-react";
+import styled from "styled-components";
 
-import media from '../Media'
+import media from "../Media";
 
 const Main = styled.div`
-    padding: 100px 40px;
-    height: 100%;
-    & .header {
-        width: 8%;
-        & h1 {
-            border-bottom: 2px solid #ff5dad;
-            margin-top: 20px;
-            color: #a094a8;
-            font-size: 32px;
-            white-space: nowrap;
-        }
+  padding: 100px 40px;
+  height: 100%;
+  & .header {
+    width: 8%;
+    & h1 {
+      border-bottom: 2px solid #ff5dad;
+      margin-top: 20px;
+      color: #a094a8;
+      font-size: 32px;
+      white-space: nowrap;
+    }
+  }
+
+  & .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 50%;
+    flex-direction: column;
+    background-color: rgba(28, 25, 45, 0.6);
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    margin-top: 40px;
+
+    & input {
+      margin-top: 10px;
+      padding: 12px;
     }
 
-    & .form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60%;
-        height: 50%;
-        flex-direction: column;
-        background-color: rgba(28, 25, 45, 0.6);
-        border-top-left-radius: 100px;
-        border-bottom-right-radius: 100px;
-        margin-top: 40px;
-
-        & input {
-            margin-top: 10px;
-            padding: 12px;
-        }
-
-        & button {
-            margin-top: 10px;
-            width: 20%;
-        }
-
-        ${media.phone`padding-top: 20px;`}
+    & button {
+      margin-top: 10px;
+      width: 20%;
     }
-`
+
+    ${media.phone`padding-top: 20px;`}
+  }
+`;
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            username: '',
-            usernameError: '',
-            password: '',
-            passwordError: '',
-            attempts: 0,
-        }
+    this.state = {
+      username: "",
+      usernameError: "",
+      password: "",
+      passwordError: "",
+      attempts: 0
+    };
+  }
+
+  onChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  onSubmit = event => {
+    event.preventDefault();
+
+    if (this.state.username.length <= 1) {
+      this.setState({
+        usernameError: "Username is required"
+      });
+      return;
+    } else {
+      this.setState({
+        usernameError: ""
+      });
     }
+    const User = {
+      username: this.state.email,
+      usernameError: this.state.usernameError,
+      password: this.state.password
+    };
 
-    onChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value,
-        })
-    }
+    // this.props.signIn(User, this.props.history);
+  };
+  render() {
+    return (
+      <Main>
+        <div className="header">
+          <h1>Login</h1>
+        </div>
 
-    onSubmit = event => {
-        event.preventDefault()
+        <div className="form">
+          <Input
+            error={this.state.usernameError ? true : false}
+            iconPosition="left"
+            placeholder={
+              this.state.usernameError ? this.state.usernameError : "Username"
+            }
+            type="username"
+            name="username"
+            value={this.state.username}
+            onChange={this.onChange}
+          >
+            <Icon name="user" color="pink" />
+            <input />
+          </Input>
+          <Input
+            error={this.state.passwordError ? true : false}
+            iconPosition="left"
+            placeholder={
+              this.state.passwordError ? this.state.passwordError : "Password"
+            }
+            type="password"
+            name="password"
+            value={this.state.password}
+            onChange={this.onChange}
+          >
+            <Icon name="lock" color="pink" />
+            <input />
+          </Input>
 
-        if (this.state.username.length <= 1) {
-            this.setState({
-                usernameError: 'Username is required',
-            })
-            return
-        } else {
-            this.setState({
-                usernameError: '',
-            })
-        }
-        const User = {
-            username: this.state.email,
-            usernameError: this.state.usernameError,
-            password: this.state.password,
-        }
-
-        // this.props.signIn(User, this.props.history);
-    }
-    render() {
-        return (
-            <Main>
-                <div className="header">
-                    <h1>Login</h1>
-                </div>
-
-                <div className="form">
-                    <Input
-                        error={this.state.usernameError ? true : false}
-                        iconPosition="left"
-                        placeholder={this.state.usernameError ? this.state.usernameError : 'Username'}
-                        type="username"
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.onChange}>
-                        <Icon name="user" color="pink" />
-                        <input />
-                    </Input>
-                    <Input
-                        error={this.state.passwordError ? true : false}
-                        iconPosition="left"
-                        placeholder={this.state.passwordError ? this.state.passwordError : 'Password'}
-                        type="password"
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.onChange}>
-                        <Icon name="lock" color="pink" />
-                        <input />
-                    </Input>
-
-                    <Button color="black" onClick={this.onSubmit}>
-                        Login
-                    </Button>
-                </div>
-            </Main>
-        )
-    }
+          <Button color="black" onClick={this.onSubmit}>
+            Login
+          </Button>
+        </div>
+      </Main>
+    );
+  }
 }
