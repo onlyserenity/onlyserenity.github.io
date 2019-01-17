@@ -1,6 +1,7 @@
 import Reddit from "../assets/reddit.png";
 import Cell from "../assets/cell.png";
 import Flutter from "../assets/flutter.png";
+import Auth from "../assets/authenticator.jpg";
 
 const Projects = [
   {
@@ -31,6 +32,16 @@ const Projects = [
       "Weather app developed using Google's newest framework, Flutter. It is designed to target Android and iOS. It uses a free API to fetch weather data and display it to the user.",
     languages: ["Android", "iOS", "Dart", "Flutter", "API"],
     img: Flutter,
+    url: ""
+  },
+  {
+    title: "Backend Authenticator for Node.js",
+    name: "Authenticator.js",
+    moto: "One code, multiple operation systems",
+    desc:
+      "Backend authentication api that works with nodejs and expressjs. It encrypts relevant information into MongoDB and can retrieve and compare encrypted information such as login for verification.",
+    languages: ["ES6", "Node.js", "Passport.js", "JWT"],
+    img: Auth,
     url: ""
   }
 ];
