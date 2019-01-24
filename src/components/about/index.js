@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import media from "../Media";
 import { Link } from "react-router-dom";
-import ResumeFile from "../../assets/William2019ee.pdf";
+import ResumeFile from "../../assets/JacobWilliam2019.pdf";
 
 const Main = styled.div`
   padding: 100px 40px;
