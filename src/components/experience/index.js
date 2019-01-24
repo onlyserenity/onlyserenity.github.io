@@ -6,7 +6,7 @@ import media from "../Media";
 import { languages } from "../../config/skills";
 import { schools } from "../../config/education";
 import { jobs } from "../../config/experience";
-
+import * as Color from "../../config/colors";
 const Main = styled.div`
   padding: 100px 40px;
   animation: fadein 1s ease-in;
@@ -29,11 +29,11 @@ const Main = styled.div`
   & .header {
     & h1 {
       width: 160px;
-      border-bottom: 2px solid #ff5dad;
+      border-bottom: 2px solid ${Color.primary};
       margin-top: 20px;
-      color: #a094a8;
+      color: ${Color.secondary};
       font-size: 32px;
-      white-space: nowrap;
+      ${Color.tertiary}-space: nowrap;
     }
   }
   & .content {
@@ -46,7 +46,7 @@ const Main = styled.div`
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25), 0 6px 10px rgba(0, 0, 0, 0.22) !important;
     height: 380px;
     & div {
-      color: #a094a8 !important;
+      color: ${Color.secondary} !important;
     }
 
     & img {
@@ -55,7 +55,7 @@ const Main = styled.div`
   }
 
   & em {
-    color: #ff5dad;
+    color: ${Color.primary};
   }
 
   & .skillsList {
@@ -66,7 +66,7 @@ const Main = styled.div`
   }
 
   & h1 {
-    color: #a094a8;
+    color: ${Color.secondary};
   }
 `;
 

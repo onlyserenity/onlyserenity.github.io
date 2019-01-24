@@ -3,6 +3,7 @@ import styled from "styled-components";
 import media from "../Media";
 import { Link } from "react-router-dom";
 import ResumeFile from "../../assets/JacobWilliam2019.pdf";
+import * as Color from "../../config/colors";
 
 const Main = styled.div`
   padding: 100px 40px;
@@ -25,41 +26,41 @@ const Main = styled.div`
   & .header {
     width: 90px;
     & h1 {
-      border-bottom: 2px solid #ff5dad;
+      border-bottom: 2px solid ${Color.primary};
       margin-top: 20px;
 
-      color: #a094a8;
+      color: ${Color.secondary};
       font-size: 32px;
-      white-space: nowrap;
+      ${Color.tertiary}-space: nowrap;
     }
   }
 
   & .name {
-    color: white;
-    white-space: nowrap;
+    color: ${Color.tertiary};
+    ${Color.tertiary}-space: nowrap;
     font-size: 24px;
 
     & em {
-      color: #ff5dad;
+      color: ${Color.primary};
       font-size: 64px;
       margin-left: 2px;
     }
   }
 
   & .title {
-    color: #ff5dad;
+    color: ${Color.primary};
     font-size: 1.6em;
-    white-space: nowrap;
+    ${Color.tertiary}-space: nowrap;
   }
 
   & .desc {
     margin-top: 20px;
-    color: #a094a8;
+    color: ${Color.secondary};
     font-size: 16px;
     width: 460px;
     line-height: 1.8em;
     & em {
-      color: #ff5dad;
+      color: ${Color.primary};
     }
 
     ${media.phone`width: 320px;`}
@@ -71,26 +72,26 @@ const Main = styled.div`
     column-gap: 20px;
     padding-top: 20px;
     & a {
-      color: white;
+      color: ${Color.tertiary};
       text-decoration: none;
     }
   }
 `;
 
 const Button = styled.div`
-  background: ${props => (props.primary ? "#221E30" : "#FF5DAD")};
-  color: ${props => (props.primary ? "#FF5DAD" : "#221E30")};
+  background: ${props => (props.primary ? "#221E30" : "${Color.primary}")};
+  color: ${props => (props.primary ? "${Color.primary}" : "#221E30")};
   height: 40px;
   margin: 0;
   text-align: center;
   padding: 10px;
-  white-space: nowrap;
+  ${Color.tertiary}-space: nowrap;
   border: 0;
   font-size: 1.8vh;
   outline: none;
   width: 140px;
   &:hover {
-    color: white;
+    color: ${Color.tertiary};
     cursor: pointer;
     filter: brightness(110%);
   }

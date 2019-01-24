@@ -3,18 +3,18 @@ import { Icon, Input, Button } from "semantic-ui-react";
 import styled from "styled-components";
 
 import media from "../Media";
-
+import * as Color from "../../config/colors";
 const Main = styled.div`
   padding: 100px 40px;
   height: 100%;
   & .header {
     & h1 {
       width: 80px;
-      border-bottom: 2px solid #ff5dad;
+      border-bottom: 2px solid ${Color.primary};
       margin-top: 20px;
-      color: #a094a8;
+      color: ${Color.secondary};
       font-size: 32px;
-      white-space: nowrap;
+      ${Color.tertiary}-space: nowrap;
     }
   }
 

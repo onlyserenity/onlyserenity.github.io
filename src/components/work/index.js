@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { List, Icon, Card, Image } from "semantic-ui-react";
 
 import { Projects } from "../../config/work";
-
+import * as Color from "../../config/colors";
 const Main = styled.div`
   padding: 100px 40px;
 
@@ -11,11 +11,11 @@ const Main = styled.div`
     & h1 {
       width: 82px;
       justify-content: flex-start;
-      border-bottom: 2px solid #ff5dad;
+      border-bottom: 2px solid ${Color.primary};
       margin-top: 20px;
-      color: #a094a8;
+      color: ${Color.secondary};
       font-size: 32px;
-      white-space: nowrap;
+      ${Color.tertiary}-space: nowrap;
     }
 
     & .icons {
@@ -23,12 +23,12 @@ const Main = styled.div`
     }
   }
   & i {
-    color: #a094a8;
+    color: ${Color.secondary};
     font-size: 1.4em;
     cursor: pointer;
 
     &:hover {
-      color: #ff5dad;
+      color: ${Color.primary};
     }
   }
 `;
@@ -80,7 +80,7 @@ const ProjectCard = styled.div`
         }
       }
       & p {
-        color: #ff5dad;
+        color: ${Color.primary};
         margin-top: 40px !important;
       }
     }
@@ -90,19 +90,19 @@ const ProjectCard = styled.div`
     display: none;
 
     & .language {
-      color: #a094a8 !important;
+      color: ${Color.secondary} !important;
     }
   }
 
   & .card-content {
     display: grid;
     grid-template-rows: 1fr 40px;
-    color: #a094a8;
+    color: ${Color.secondary};
   }
 
   & .card-header {
     padding: 10px 10px 10px 0;
-    color: #ff5dad;
+    color: ${Color.primary};
   }
 `;
 

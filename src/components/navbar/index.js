@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import Avatar from "../../assets/avatar.png";
 import Footer from "../footer";
-
+import * as Color from "../../config/colors";
 const Main = styled.div`
   width: auto !important;
   padding: 0;
@@ -43,14 +43,14 @@ const fullNav = css`
     width: 200px;
   }
   & .active {
-    border-left: 3px solid #ff5dad;
+    border-left: 3px solid ${Color.primary};
 
-    color: #ff5dad;
+    color: ${Color.primary};
   }
   & .item {
     padding: 10px 80px;
     margin: 20px 0;
-    color: #a094a8;
+    color: ${Color.secondary};
     cursor: pointer;
   }
   & a {
@@ -183,14 +183,14 @@ const MobileDropMenu = styled.div`
     & a {
       font-size: 24px;
       padding: 0 140px;
-      color: white;
+      color: ${Color.tertiary};
     }
   }
 
   & .active {
-    border-bottom: 3px solid #ff5dad;
+    border-bottom: 3px solid ${Color.primary};
 
-    color: #ff5dad;
+    color: ${Color.primary};
   }
 
   & .footer-mobile {

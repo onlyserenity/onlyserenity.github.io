@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { List, Icon } from "semantic-ui-react";
 
+import * as Color from "../../config/colors";
 const Container = styled.div`
   padding: 10px 80px;
   animation: fadein 1s ease-in;
@@ -14,12 +15,12 @@ const Container = styled.div`
     }
   }
   & i {
-    color: #a094a8;
+    color: ${Color.secondary};
     font-size: 1.8em;
     cursor: pointer;
 
     &:hover {
-      color: #ff5dad;
+      color: ${Color.primary};
     }
   }
 
