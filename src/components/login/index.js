@@ -7,6 +7,7 @@ import * as Color from "../../config/colors";
 const Main = styled.div`
   padding: 100px 40px;
   height: 100%;
+  animation: fadein 1s ease-in;
   & .header {
     & h1 {
       width: 80px;

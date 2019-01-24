@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router } from "react-router-dom";
 import styled from "styled-components";
 
+import * as Color from "../config/colors";
 import Layout from "./Layout";
 import Background from "../assets/01.jpg";
 
@@ -27,6 +28,24 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     line-height: 1.25;
+    & .ui.modal {
+      background: rgba(0, 0, 0, 0.4) !important;
+      width: 80%;
+      height: 50%;
+      color: ${Color.primary} !important;
+      text-align: center;
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      & p {
+        font-size: 20px;
+        color: ${Color.secondary};
+      }
+      & .content {
+        background: transparent !important;
+      }
+    }
+
 
   }
 

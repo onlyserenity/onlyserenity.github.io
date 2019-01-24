@@ -10,7 +10,11 @@ const Projects = [
     name: "Reddictron",
     desc:
       "This application is cross-platform and is currently in the alpha stage. New features are added on a daily-basis.",
-    languages: ["JavaScript", "ReactJs", "ElectronJs"],
+    languages: [
+      ["javascript", "JavaScript"],
+      ["react", "ReactJs"],
+      ["atom", "ElectronJs"]
+    ],
     img: Reddit,
     url: ""
   },
@@ -19,7 +23,12 @@ const Projects = [
     name: "Cell Productivity",
     desc:
       "This application is currently under development and it's 99% completed. It features real-time analytics, order management and tracking features. It also has in-app messaging system for supervisors and works at workstations and integrated with Workday API to show real-time employee location through out the facility.",
-    languages: ["C#", "MVC", "Microsoft SQL", "API"],
+    languages: [
+      ["csharp", "C#"],
+      ["amazonwebservices", "MVC"],
+      ["mysql", "Microsoft SQL"],
+      ["webpack", "API"]
+    ],
     img: Cell,
     url: ""
   },
@@ -28,7 +37,13 @@ const Projects = [
     name: "Flutter Weather",
     desc:
       "Weather app developed using Google's newest framework, Flutter. It is designed to target Android and iOS. It uses a free API to fetch weather data and display it to the user.",
-    languages: ["Android", "iOS", "Dart", "Flutter", "API"],
+    languages: [
+      ["android", "Android"],
+      ["apple", "iOS"],
+      ["dart", "Dart"],
+      ["google", "Flutter"],
+      ["webpack", "API"]
+    ],
     img: Flutter,
     url: ""
   },
@@ -37,7 +52,11 @@ const Projects = [
     name: "Authenticator.js",
     desc:
       "Backend authentication api that works with nodejs and expressjs. It encrypts relevant information into MongoDB and can retrieve and compare encrypted information such as login for verification.",
-    languages: ["ES6", "Node.js", "Passport.js", "JWT"],
+    languages: [
+      ["javascript", "ES6"],
+      ["nodejs", "Node.js"],
+      ["mongodb", "MongoDB"]
+    ],
     img: Auth,
     url: ""
   },
@@ -46,7 +65,7 @@ const Projects = [
     name: "C++ Algorithms",
     desc:
       "Implementation of different data structures and algorithms in real world project without the use of any external library.",
-    languages: ["C++", "Data Structures", "Algorithms"],
+    languages: [["cplusplus", "C++"]],
     img: Algo,
     url: ""
   }

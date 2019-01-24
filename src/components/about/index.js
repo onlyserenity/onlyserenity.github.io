@@ -79,13 +79,13 @@ const Main = styled.div`
 `;
 
 const Button = styled.div`
-  background: ${props => (props.primary ? "#221E30" : "${Color.primary}")};
-  color: ${props => (props.primary ? "${Color.primary}" : "#221E30")};
+  background: ${props => (props.primary ? "#221E30" : `${Color.primary}`)};
+  color: ${props => (props.primary ? `${Color.primary}` : "#221E30")};
   height: 40px;
   margin: 0;
   text-align: center;
   padding: 10px;
-  ${Color.tertiary}-space: nowrap;
+  white-space: nowrap;
   border: 0;
   font-size: 1.8vh;
   outline: none;
