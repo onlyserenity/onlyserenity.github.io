@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Input, Button, Icon, Modal, Form, TextArea } from "semantic-ui-react";
+import axios from 'axios';
 
 import media from "../Media";
 import Mars from "../../assets/mars.png";
@@ -78,6 +79,7 @@ export default class Contact extends Component {
     super(props);
 
     this.state = {
+      email: '',
       title: "",
       text: "",
       open: false,
@@ -92,6 +94,12 @@ export default class Contact extends Component {
   };
 
   onSubmit = event => {
+    if (!this.state.email) {
+      this.state.errorMessage.push("Email is required");
+      this.setState({
+        open: true
+      });
+    }
     event.preventDefault();
     if (!this.state.title) {
       this.state.errorMessage.push("Title is required");
@@ -105,6 +113,19 @@ export default class Contact extends Component {
         open: true
       });
     }
+    
+    let req = {
+      email: this.state.email,
+      title: this.state.title,
+      body: this.state.text
+    }
+    axios.post('/send', req)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.error(err); 
+    })
   };
 
   close = () => this.setState({ open: false, errorMessage: [] });
@@ -117,6 +138,17 @@ export default class Contact extends Component {
 
         <div className="content">
           <div className="form">
+          <Input
+              iconPosition="left"
+              placeholder="Email"
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={this.onChange}
+            >
+              <Icon name="mail" color="pink" />
+              <input />
+          </Input>
             <Input
               iconPosition="left"
               placeholder="Title"
