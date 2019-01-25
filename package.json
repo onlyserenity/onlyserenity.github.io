@@ -2,6 +2,10 @@
   "name": "onlyserenity.github.io",
   "version": "1.0.0",
   "main": "server.js",
+  "author": {
+    "name": "Jacob William",
+    "url": "https://jacobwi.io/"
+  },
   "repository": "https://github.com/onlyserenity/onlyserenity.github.io.git",
   "license": "MIT",
   "scripts": {

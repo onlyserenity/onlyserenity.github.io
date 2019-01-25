@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import media from "../Media";
 import { Link } from "react-router-dom";
-import ResumeFile from "../../assets/JacobWilliam2019.pdf";
+import ResumeFile from "../../assets/2019William.pdf";
 import * as Color from "../../config/colors";
 
 const Main = styled.div`

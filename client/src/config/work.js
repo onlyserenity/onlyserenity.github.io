@@ -3,20 +3,21 @@ import Cell from "../assets/cell.png";
 import Flutter from "../assets/flutter.png";
 import Auth from "../assets/authenticator.jpg";
 import Algo from "../assets/algo.jpg";
+import Coolit from "../assets/Coolit.png";
 
 const Projects = [
   {
-    title: "Reddit Client",
-    name: "Reddictron",
+    title: "Cool It!",
+    name: "Cool It!",
     desc:
-      "This application is cross-platform and is currently in the alpha stage. New features are added on a daily-basis.",
+      "Developed cross-platform, real-time application using React, Redux, Electron, and Firebase that allows users to chat and create their own groups.",
     languages: [
       ["javascript", "JavaScript"],
       ["react", "ReactJs"],
       ["atom", "ElectronJs"]
     ],
-    img: Reddit,
-    url: ""
+    img: Coolit,
+    url: "https://github.com/onlyserenity/cool-it"
   },
   {
     title: "Manufacturing Multi-purpose Application",
@@ -45,7 +46,7 @@ const Projects = [
       ["webpack", "API"]
     ],
     img: Flutter,
-    url: ""
+    url: "https://github.com/onlyserenity/FlutterWeather"
   },
   {
     title: "Backend Authenticator for Node.js",
@@ -58,7 +59,7 @@ const Projects = [
       ["mongodb", "MongoDB"]
     ],
     img: Auth,
-    url: ""
+    url: "https://github.com/onlyserenity/authenticator-expressjs"
   },
   {
     title: "Data Structures and Algorithms in C++",
@@ -67,8 +68,21 @@ const Projects = [
       "Implementation of different data structures and algorithms in real world project without the use of any external library.",
     languages: [["cplusplus", "C++"]],
     img: Algo,
-    url: ""
+    url: "https://github.com/onlyserenity/CS260_DATA_STRUCTURES"
+  },
+  {
+    title: "Reddit Client",
+    name: "Reddictron",
+    desc:
+      "This application is cross-platform and is currently in the alpha stage. New features are added on a daily-basis.",
+    languages: [
+      ["javascript", "JavaScript"],
+      ["react", "ReactJs"],
+      ["atom", "ElectronJs"]
+    ],
+    img: Reddit,
+    url: "https://github.com/onlyserenity/Relectron-reddit"
   }
 ];
 
-export { Projects };
+export default Projects;

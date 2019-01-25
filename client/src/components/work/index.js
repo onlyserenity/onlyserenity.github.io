@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { List, Icon, Card, Image, Modal, Reveal } from "semantic-ui-react";
-import * as DevIcon from "react-devicon";
-import { Projects } from "../../config/work";
+import {
+  List,
+  Icon,
+  Card,
+  Image,
+  Modal,
+  Reveal,
+  Label
+} from "semantic-ui-react";
+import Projects from "../../config/work";
 import * as Color from "../../config/colors";
 const Main = styled.div`
   padding: 100px 40px;
@@ -175,6 +182,14 @@ export default class Work extends Component {
                           </List>
                         ))}
                       </div>
+                      {item.url && (
+                        <a href={item.url}>
+                          <Label as="a" image size="medium">
+                            <Icon name="github alternate" color="pink" />
+                            Source Code
+                          </Label>
+                        </a>
+                      )}
                     </div>
                   }
                   closeIcon
