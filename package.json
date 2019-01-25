@@ -7,6 +7,7 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon server --exec babel-node",
+    "build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
   },
