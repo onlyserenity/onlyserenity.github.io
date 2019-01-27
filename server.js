@@ -1,8 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import chalk from 'chalk';
-import { eventNames } from 'cluster';
-const nodemailer = require('nodemailer');
+import cors from 'cors';
+
+require('dotenv').config()
+
 const app = express();
 
 // Port variable
@@ -14,39 +16,24 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+app.use(cors())
+
+
 // Send Email
 app.post('/send', (req, res) => {
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-      auth: {
-          user: process.env.USERNAME, // generated ethereal user
-          pass: process.env.PASSWORD  // generated ethereal password
-      },
-      tls:{
-        rejectUnauthorized:false
-      }
-    });
-  
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: req.email, // sender address
-        to: 'amjedcha@gmail.com', // list of receivers
-        subject: req.title, // Subject line
-        text: req.body // plain text body
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+        to: process.env.EMAIL,
+        from: req.body.email,
+        subject: req.body.title,
+        text: req.body.body,
+
     };
-  
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);   
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-  
-        res.status(200).send("Email sent!")
-    });
-    });
-  
+    sgMail.send(msg).then(res => console.log('Message sent!')).catch(err => console.log(err));
+
+});
+
 
 
 app.listen(PORT, () => {
